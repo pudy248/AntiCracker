@@ -8,7 +8,7 @@
 		"Kludwisz"
 	],
 	"license": "MIT",
-	"icon": "assets/anticracker/icon.png",
+	"icon": "assets/anticracker/acIcon.png",
 	"environment": "*",
 	"mixins": [
 		"anticracker.mixins.json"
