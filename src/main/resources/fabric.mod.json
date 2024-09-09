@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "anticracker",
 	"version": "${version}",
 	"name": "AntiCracker",
 	"description": "Renders loot-table-based seedcracking infeasible",
