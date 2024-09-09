@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.kludwisz.anticracker.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MinecraftServerMixin",
+    "LootableContainerBlockEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
