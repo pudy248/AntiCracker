@@ -14,10 +14,9 @@
 		"anticracker.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.2",
+		"fabricloader": ">=0.14.2",
 		"minecraft": "~1.16.1",
-		"java": ">=21",
-		"fabric-api": "*"
+		"java": ">=8"
 	},
 	"suggests": {
 		"another-mod": "*"
