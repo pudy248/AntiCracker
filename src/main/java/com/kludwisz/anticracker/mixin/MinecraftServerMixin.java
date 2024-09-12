@@ -1,8 +1,10 @@
 package com.kludwisz.anticracker.mixin;
 
 import com.kludwisz.anticracker.SeedHash;
+
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.SaveProperties;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -15,8 +17,7 @@ public abstract class MinecraftServerMixin {
 	@Shadow @Final protected SaveProperties saveProperties;
 
 	@Inject(at = @At("HEAD"), method = "createWorlds")
-	private void init(CallbackInfo info) {
-		// Pre-calculate the hash of the world seed on each new world load
+	private void precalculateHash(CallbackInfo info) {
 		long worldSeed = this.saveProperties.getGeneratorOptions().getSeed();
 		SeedHash.precalculateWorldSeedHash(worldSeed);
 	}
