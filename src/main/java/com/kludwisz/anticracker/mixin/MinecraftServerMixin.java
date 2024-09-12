@@ -15,8 +15,7 @@ public abstract class MinecraftServerMixin {
 	@Shadow @Final protected SaveProperties saveProperties;
 
 	@Inject(at = @At("HEAD"), method = "createWorlds")
-	private void init(CallbackInfo info) {
-		// Pre-calculate the hash of the world seed on each new world load
+	private void precalculateHash(CallbackInfo info) {
 		long worldSeed = this.saveProperties.getGeneratorOptions().getSeed();
 		SeedHash.precalculateWorldSeedHash(worldSeed);
 	}
