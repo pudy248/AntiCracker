@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "anticracker",
+	"id": "anticracker-s",
 	"version": "${version}",
-	"name": "AntiCracker",
-	"description": "Renders loot-table-based seedcracking infeasible",
+	"name": "AntiCracker-S",
+	"description": "Renders all modern fast seed cracking techniques infeasible.",
 	"authors": [
 		"Kludwisz"
 	],
