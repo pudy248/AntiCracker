@@ -18,7 +18,7 @@ public class LootableContainerBlockEntityMixin {
 
     @Inject(method = "setLootTable(Lnet/minecraft/util/Identifier;J)V", at = @At(value = "TAIL"))
     private void setScrambledLootSeed(Identifier id, long seed, CallbackInfo ci) {
-        System.out.println("Previous loot seed: " + this.lootTableSeed + ", new seed: " + (seed ^ SeedHash.getWorldSeedHash()));
+        // System.out.println("Previous loot seed: " + this.lootTableSeed + ", new seed: " + (seed ^ SeedHash.getWorldSeedHash()));
         this.lootTableSeed = seed ^ SeedHash.getWorldSeedHash();
     }
 }

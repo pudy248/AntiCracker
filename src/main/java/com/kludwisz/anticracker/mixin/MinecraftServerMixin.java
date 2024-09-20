@@ -3,11 +3,8 @@ package com.kludwisz.anticracker.mixin;
 import com.kludwisz.anticracker.SeedHash;
 
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.structure.RuinedPortalStructurePiece;
 import net.minecraft.world.SaveProperties;
 
-import net.minecraft.world.gen.feature.BastionRemnantFeature;
-import net.minecraft.world.gen.feature.RuinedPortalFeature;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,7 +20,5 @@ public abstract class MinecraftServerMixin {
 	private void precalculateHash(CallbackInfo info) {
 		long worldSeed = this.saveProperties.getGeneratorOptions().getSeed();
 		SeedHash.precalculateWorldSeedHash(worldSeed);
-
-		BastionRemnantFeature piece;
 	}
 }
