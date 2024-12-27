@@ -14,12 +14,12 @@ public class SeedHash {
 
     private static final boolean ENABLED = true;
     // pudy248 note: the access method is totally unsafe, just remember to not ask for an index bigger than this number :P
-    private static final int NUM_HASHES = 4;
+    private static final int NUM_HASHES = 5;
     private static final int ITERS_PER_HASH = 32;
 
     // -------------------------------------------------------------------
     // pudy248 note: it doesn't matter if these are atomic, we never do any operations that would require it
-    private static final long[] hashes;
+    private static final long[] hashes = new int[NUM_HASHES];
 
     /**
      * Pre-calculates a hash of the world seed by repeatedly applying a hashing function
@@ -31,7 +31,6 @@ public class SeedHash {
             return;
 
         long hsh = worldSeed;
-        hashes = new int[NUM_HASHES];
 
         for (int j = 0; j < NUM_HASHES; j++) {
             for (int i = 0; i < ITERS_PER_HASH; i++) {
@@ -73,6 +72,6 @@ public class SeedHash {
      */
     public static long getWorldSeedHash(int index) {
         // if (index > NUM_HASHES) halt_and_catch_fire();
-        return result[index];
+        return hashes[index];
     }
 }

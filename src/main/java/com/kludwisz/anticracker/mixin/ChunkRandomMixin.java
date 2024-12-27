@@ -27,7 +27,7 @@ public class ChunkRandomMixin extends Random {
 
     @Inject(at = @At("RETURN"), method = "setCarverSeed", cancellable = true)
     private void carverseedRet(CallbackInfoReturnable<Long> cir) {
-        long scrambledSeed = cir.getReturnValue() ^ SeedHash.getWorldSeedHash(2);
+        long scrambledSeed = cir.getReturnValue() ^ SeedHash.getWorldSeedHash(4);
         setSeed(scrambledSeed);
         cir.setReturnValue(scrambledSeed);
     }
